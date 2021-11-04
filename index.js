@@ -17,6 +17,10 @@ app.use(express.static('public'));
 // Setup the Websocket to allow connections between multiple clients.
 var io = socket(server);
 io.on('connection', function(socket){
+
+    var address = socket.handshake.address;
+    console.log('[INFO=>WS] Connected to client: ' + address.address + ':' + address.port);
+
     console.log('[INFO=>WS] Socket connection created with ID: ', socket.id);
 	
 	socket.emit('initial-connection', messages);
