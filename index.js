@@ -21,9 +21,8 @@ io.on('connection', function(socket){
     var ip = socket.handshake.headers["x-real-ip"];
     var port = socket.handshake.headers["x-real-port"];
 
-    console.log('[INFO=>WS] Connected to client: ' + ip + ':' + port);
+    console.log('\n[INFO=>WS] Connection Success!\nConnected to client: ' + ip + ':' + port + '\nClient Websocket ID: ' +  socket.id + '\n');
 
-    console.log('[INFO=>WS] Socket connection created with ID: ', socket.id);
 	
 	socket.emit('initial-connection', messages);
 	
