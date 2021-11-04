@@ -40,5 +40,5 @@ socket.on('typing', function(data){
 // Retrieve old messages if a user is logging back in.
 function appendMessage(data) {
 	feedback.innerHTML = '';
-    output.innerHTML += '<p><strong>' + data.handle + '</strong> ' + data.message + '</p>';
+    output.innerHTML += '<p><strong>' + data.handle + '</strong>  ' + data.message + '</p>';
 }
