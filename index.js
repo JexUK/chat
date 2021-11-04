@@ -18,8 +18,10 @@ app.use(express.static('public'));
 var io = socket(server);
 io.on('connection', function(socket){
 
-    var address = socket.handshake.address;
-    console.log('[INFO=>WS] Connected to client: ' + address.address + ':' + address.port);
+    var ip = socket.handshake.headers["x-real-ip"];
+    var port = socket.handshake.headers["x-real-port"];
+
+    console.log('[INFO=>WS] Connected to client: ' + ip + ':' + port);
 
     console.log('[INFO=>WS] Socket connection created with ID: ', socket.id);
 	
