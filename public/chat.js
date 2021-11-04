@@ -1,5 +1,5 @@
 // Make the connection to the Websocket in order to do, well... everything.
-var socket = io.connect('http://localhost:9000');
+var socket = io.connect('https://chat.hydrifi.com');
 
 // Query the DOM HTML elements in order to recieve data.
 var message = document.getElementById('message'),
